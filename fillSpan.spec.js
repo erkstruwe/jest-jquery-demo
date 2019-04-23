@@ -1,22 +1,34 @@
-const $ = require('jquery')
+const $ = require("jquery");
 
-require('./fillSpan')
+require("./fillSpan");
 
-describe('fillSpan()', () => {
+describe("fillSpan()", () => {
     beforeEach(() => {
         document.body.innerHTML = `
         <button id="fill-span-button"></button>
         <span id="fill-span-span">No</span>
-        `
-        HF.fillSpan()
-    })
+        `;
+        HF.fillSpan();
+    });
 
-    test('replace inner HTML of the span', () => {
-        const $button = $('#fill-span-button')
-        const $span = $('#fill-span-span')
+    test("replace inner HTML of the span", () => {
+        const $buttons = $("#fill-span-button");
+        const $spans = $("#fill-span-span");
 
-        expect($span.text()).toBe('No')
-        $button.click()
-        expect($span.text()).toBe('Yes')
-    })
-})
+        expect($spans.text()).toBe("No");
+        $buttons.click();
+        expect($spans.text()).toBe("Yes");
+    });
+    test("replace inner HTML of the span (snapshot)", () => {
+        const $buttons = $("#fill-span-button");
+        const $spans = $("#fill-span-span");
+
+        expect($spans[0].outerHTML).toMatchInlineSnapshot(
+            `"<span id=\\"fill-span-span\\">No</span>"`
+        );
+        $buttons.click();
+        expect($spans[0].outerHTML).toMatchInlineSnapshot(
+            `"<span id=\\"fill-span-span\\">Yes</span>"`
+        );
+    });
+});

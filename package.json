@@ -6,11 +6,14 @@
   "license": "ISC",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "npm run unit",
+    "unit": "jest",
+    "unit:watch": "npm run unit -- --watchAll"
   },
   "dependencies": {},
   "devDependencies": {
     "jest": "^24.7.1",
-    "jquery": "^3.4.0"
+    "jquery": "^3.4.0",
+    "prettier": "^1.17.0"
   }
 }
