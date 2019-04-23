@@ -1,0 +1,16 @@
+{
+  "name": "jest-jquery-demo",
+  "version": "0.1.0",
+  "description": "Unit testing DOM manipulation with Jest and a global object",
+  "author": "Erk Struwe <estruwe@estruwe.de>",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^24.7.1",
+    "jquery": "^3.4.0"
+  }
+}
