@@ -28,7 +28,7 @@ describe("fillSpan()", () => {
         );
     });
     test("slides up", () => {
-        jest.spyOn($.fn, 'slideUp');
+        jest.spyOn($.fn, 'slideUp').mockReturnThis();
         this.$buttons.click();
         expect($.fn.slideUp).toHaveBeenCalledTimes(1)
         expect($.fn.slideUp.mock.instances[0]).toEqual(this.$spans)
