@@ -3,4 +3,5 @@ module.exports = {
         HF: {},
     },
     restoreMocks: true,
+    setupFiles: ["./setup.js"]
 }
